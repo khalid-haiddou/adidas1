@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
+Route::resource('category', CategoryController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Display the form for creating a category
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('category.create');
+
+// Handle the submission of the form to create a category
+Route::post('/categories', [CategoryController::class, 'store'])->name('category.store');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
+
+// Update the category
+
+
+Route::delete('/categories/{category}', 'CategoryController@destroy')->name('category.destroy');
