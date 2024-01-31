@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+
+Route::resource('products', ProductController::class);
 
 Route::resource('category', CategoryController::class);
 /*
@@ -27,7 +30,7 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('category
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
 
-// Update the category
+Route::resource('category', CategoryController::class);
 
+Route::resource('categories', CategoryController::class);
 
-Route::delete('/categories/{category}', 'CategoryController@destroy')->name('category.destroy');
