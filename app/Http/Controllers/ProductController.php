@@ -70,8 +70,6 @@ public function edit($id)
 
         
         if ($request->hasFile('images')) {
-            
-            Storage::delete('assets/' . $product->images);
             $imageName = $request->file('images')->getClientOriginalName();
             $request->file('images')->move(public_path('assets'), $imageName);
             $input['images'] = $imageName;
