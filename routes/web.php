@@ -34,3 +34,5 @@ Route::resource('category', CategoryController::class);
 Route::resource('categories', CategoryController::class);
 
 Route::resource('products', ProductController::class );
+
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');

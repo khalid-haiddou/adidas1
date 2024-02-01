@@ -48,6 +48,7 @@
 <body>
     <div class="container">
         <a href="/categories/create" class="btn btn-primary">ADD CATEGORY</a>
+        <a href="/products" class="btn btn-primary"> ALL PRODUCTS </a>
         <h2 class="text-center">All Categories</h2>
         <table class="table table-striped">
             <thead>

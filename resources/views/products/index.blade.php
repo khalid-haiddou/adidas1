@@ -32,6 +32,8 @@
 </head>
 <body>
     <div class="container py-5">
+    <a href="/products/create" class="btn btn-primary">NEW PRODUCT</a>
+    <a href="/categories" class="btn btn-primary">Categories</a>
         <h2 class="text-center text-primary">Product List</h2>
         <table class="table table-bordered table-hover">
             <thead>
@@ -60,10 +62,10 @@
                         </td>
                         <td class="action-buttons" >
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning"  >Edit</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
                             </form>
                         </td>
                     </tr>
